@@ -2,41 +2,230 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<nav>
-        <a href="./Index.html">🏠Home</a>
-        |
-        <a href="./level1.html">🧩 Puzzle 1</a>
-        |
-        <a href="./level2.html">🧩 Puzzle 2</a>
-        |
-        <a href="./level3.html">🧩 Puzzle 3</a>
-        |
-        <a href="./level4.html">🧩 Puzzle 4</a>
-        |
-        <a href="./level5.html">🧩 Puzzle 5</a>
-        |
-        <a href="./result.html">🏆 Result</a>
-        
-    </nav>
-    <h1>🧩 Level 4: Pattern Puzzle (The Fence Sequence)</h1>
-    <h3>🪵 Barn Fence Pattern Mystery! 🚜📐</h3>  
-    <img src="./photo4.png" alt="Description of image">  
-    <p>
-        Kisan apne farm ke chaaro taraf lakdi ki fencing laga raha hai. Woh ek pattern follow kar raha hai:
-    <br><br>Pehle din: 2 poles lagaye 🪵<br><br>Doosre din: 4 poles lagaye 🪵🪵 <br><br>Teesre din: 8 poles lagaye 🪵🪵🪵
-<br><br>Chauthe din: 16 poles lagaye...<br><br>Sawal: Batao 5we din kisan total kitne poles lagayega? 🔢</p>
-    <ol type="A">
-        <a href="./wrong4.html"><li>20 poles</li></a>
-        <a href="./wrong4.html"><li>24 poles</li></a>
-        <a href="./level5.html"><li>32 poles✅</li></a>
-        <a href="./wrong4.html"><li>64 poles</li></a>
-    </ol>
-    <footer>
-        <br>
-        Hint: 🪵 "Har agle din poles ki sankhya pichle din se double (×2) hoti ja rahi hai, <br>dhyan se calculate karo!" 📈
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 4: Pattern Puzzle | Brain Challenge</title>
+    <!-- Google Fonts for World-Class Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset & Futuristic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
+        }
+
+        /* Main Glassmorphism Container */
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 750px;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        nav {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav a:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Headers */
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        /* Hero Image with Floating Effect */
+        .puzzle-img {
+            width: 240px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: floatEffect 4s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .puzzle-img:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        @keyframes floatEffect {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Puzzle Description Box */
+        .question-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .sub-question {
+            color: #38bdf8;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: left;
+        }
+
+        /* Options Grid */
+        .options-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .options-list a {
+            text-decoration: none;
+        }
+
+        .option-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 12px;
+            color: #f8fafc;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .option-card:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Hint Footer */
+        footer {
+            background: rgba(244, 114, 182, 0.1);
+            border: 1px solid rgba(244, 114, 182, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #f472b6;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 600px) {
+            .options-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="./Index.html">🏠 Home</a>
+            <a href="./level1.html">🧩 Puzzle 1</a>
+            <a href="./level2.html">🧩 Puzzle 2</a>
+            <a href="./level3.html">🧩 Puzzle 3</a>
+            <a href="./level4.html">🧩 Puzzle 4</a>
+            <a href="./level5.html">🧩 Puzzle 5</a>
+            <a href="./result.html">🏆 Result</a>
+        </nav>
+
+        <!-- Header Info -->
+        <h1>🧩 Level 4: Pattern Puzzle</h1>
+        <h3>🪵 Barn Fence Pattern Mystery! 🚜📐</h3>  
+
+        <!-- Puzzle Image -->
+        <img class="puzzle-img" src="../First_HTML_project/photo4.png" alt="Pattern Puzzle Illustration">  
+
+        <!-- Question Story Box -->
+        <div class="question-box">
+            Kisan apne farm ke chaaro taraf lakdi ki fencing laga raha hai. Woh ek pattern follow kar raha hai:
+            <br><br>• Pehle din: 2 poles lagaye 🪵
+            <br>• Doosre din: 4 poles lagaye 🪵🪵 
+            <br>• Teesre din: 8 poles lagaye 🪵🪵🪵
+            <br>• Chauthe din: 16 poles lagaye...
+        </div>
+
+        <div class="sub-question">
+            🔢 Sawal: Batao 5we din kisan total kitne poles lagayega?
+        </div>
+
+        <!-- Options Grid -->
+        <ul class="options-list">
+            <a href="./wrong4.html"><li class="option-card">20 poles</li></a>
+            <a href="./wrong4.html"><li class="option-card">24 poles</li></a>
+            <a href="./level5.html"><li class="option-card" style="border-color: #38bdf8; background: rgba(56,189,248,0.1);">32 poles ✅</li></a>
+            <a href="./wrong4.html"><li class="option-card">64 poles</li></a>
+        </ul>
+
+        <!-- Hint Footer -->
+        <footer>
+            💡 <strong>Hint:</strong> Har agle din poles ki sankhya pichle din se double (×2) hoti ja rahi hai, dhyan se calculate karo! 📈
+        </footer>
+    </div>
+
 </body>
 </html>

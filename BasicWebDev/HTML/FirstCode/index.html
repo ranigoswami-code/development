@@ -1,17 +1,238 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /<title>Document</title>
-  </head>
-  <body>
-    <h1><u>My First Web Page</u></h1>
-    <p>
-      <h1>
-        Para1
-      </h1>
-      Lorem ipsum dolor, sit amet consectetur adipisicing  est neque alias ipsum. A hic aperiam totam eligendi quidem, <b>necessitatibus</b> itaque ipsa quo, p<u>ariatur</u> error <i>officia</i> amet deleniti nisi dolore tempora rem commodi doloribus,<hr>
-       autem consectetur animi illo cupiditate quae culpa!<br> Cum provident quod autem accusamus iste aspernatur est odit velit excepturi. Similique cum explicabo ullam nisi dignissimos sequi consequuntur autem quos veritatis quidem ab, eos obcaecati maiores sed tenetur reiciendis fugiat eum cupiditate, vero ut? Quod hic similique asperiores commodi! Necessitatibus sapiente dolorem fugiat doloremque dignissimos minima cupiditate doloribus ducimus magni voluptate amet excepturi labore aspernatur maxime atque ratione aut in architecto libero accusantium, itaque repellendus molestias officiis. Quasi aliquam culpa quam tempora nulla doloremque, animi, est soluta deserunt inventore possimus impedit nisi neque minus porro beatae placeat dicta atque doloribus odio hic delectus? Doloremque neque nostrum iusto quia nobis eligendi maxime officiis. Mollitia doloribus libero dolorem? Architecto est possimus ut, quae dolor placeat asperiores earum error consequatur nemo. Commodi neque eius ullam dolorum?
-    </p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Challenge | Ultimate Interactive Journey</title>
+    <!-- Google Fonts for World-Class Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset & Futuristic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: container;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
+        }
+
+        /* Main Glassmorphism Container */
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 750px;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Header Title */
+        h1.main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav a:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Image Styling with Premium Floating Effect */
+        .hero-img {
+            width: 260px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            /* Smooth subtle floating effect instead of crazy spinning */
+            animation: floatEffect 4s ease-in-out infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(56, 189, 248, 0.3);
+        }
+
+        @keyframes floatEffect {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Content Section */
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #f1f5f9;
+        }
+
+        p.desc {
+            color: #cbd5e1;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Levels List */
+        .levels-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .levels-list li {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 12px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #38bdf8;
+            font-size: 0.95rem;
+            transition: background 0.3s ease;
+        }
+
+        .levels-list li:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Timer Badge */
+        .timer-badge {
+            display: inline-block;
+            background: rgba(244, 114, 182, 0.15);
+            color: #f472b6;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            border: 1px solid rgba(244, 114, 182, 0.3);
+        }
+
+        /* Start Game Button */
+        .start-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+            color: white;
+            padding: 14px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            font-size: 0.85rem;
+            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <h1 class="main-title">🧠 Brain Challenge 🚜✨</h1>
+        <p class="subtitle">Can you solve all 5 futuristic puzzles?</p>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="./Index.html">🏠 Home</a>
+            <a href="./level1.html">🧩 Puzzle 1</a>
+            <a href="./level2.html">🧩 Puzzle 2</a>
+            <a href="./level3.html">🧩 Puzzle 3</a>
+            <a href="./level4.html">🧩 Puzzle 4</a>
+            <a href="./level5.html">🧩 Puzzle 5</a>
+            <a href="./result.html">🏆 Result</a>
+        </nav>
+
+        <main>
+            <!-- Image with correct path and professional floating effect -->
+            <img class="hero-img" src="../First_HTML_project/Home.png" alt="Brain Challenge Home Graphic"> 
+            
+            <h2>Welcome to the Ultimate Brain Challenge!</h2>
+            <p class="desc">Test your logic, mathematical skills, vocabulary, patterns, and riddles across 5 immersive levels designed to stretch your mind.</p>
+            
+            <ul class="levels-list">
+                <li>✨ **Level 1:** Logic Puzzle (Barn & Farm Animals)</li>
+                <li>✨ **Level 2:** Math Puzzle (Hay Bales Calculation)</li>
+                <li>✨ **Level 3:** Word Puzzle (Farm Anagrams)</li>
+                <li>✨ **Level 4:** Pattern Puzzle (Fence Sequences)</li>
+                <li>✨ **Level 5:** Riddle Puzzle (The Weather Vane)</li>
+            </ul>
+        </main>
+
+        <div class="timer-badge">⏰ Time Limit: 5 Minutes</div>
+        
+        <div>
+            <a href="./level1.html" class="start-btn">✨ Start The Game</a>
+        </div>
+
+        <footer>
+            ^_^ Need instructions? Choose an answer on each level. Correct choices automatically route you forward through your journey! 
+        </footer>
+    </div>
+
+</body>
 </html>

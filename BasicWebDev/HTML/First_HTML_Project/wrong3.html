@@ -3,10 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Oops! Wrong Answer | Brain Challenge</title>
+    <!-- Google Fonts for World-Class Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset & Futuristic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* Main Glassmorphism Container */
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 550px;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Error Heading */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #f87171, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Retry Button */
+        .retry-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+            color: white;
+            padding: 14px 35px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(225, 29, 72, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .retry-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(244, 63, 94, 0.6);
+        }
+    </style>
 </head>
 <body>
-    <h1>❌ Wrong Answer!</h1>
-    <a href="./level3.html">Try Level Third Again</a>
+
+    <div class="container">
+        <h1>❌ Wrong Answer!</h1>
+        <p>Arey thoda aur sochiye! Us scrambled word ko rearrange karke farm ka ek popular bird name banana hai. 🔤🧠</p>
+        
+        <!-- Yahan click karke user seedha wapas Level 3 par ja sakega -->
+        <a href="./level3.html" class="retry-btn">🔄 Try Level Third Again</a>
+    </div>
+
 </body>
 </html>

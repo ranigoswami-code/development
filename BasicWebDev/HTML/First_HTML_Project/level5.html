@@ -3,41 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Level 5: Riddle Puzzle | Brain Challenge</title>
+    <!-- Google Fonts for World-Class Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset & Futuristic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
+        }
+
+        /* Main Glassmorphism Container */
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 750px;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        nav {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav a:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Headers */
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        /* Hero Image with Floating Effect */
+        .puzzle-img {
+            width: 240px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: floatEffect 4s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .puzzle-img:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        @keyframes floatEffect {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Riddle Speech Box */
+        .question-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .sub-question {
+            color: #38bdf8;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: left;
+        }
+
+        /* Options Grid */
+        .options-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .options-list a {
+            text-decoration: none;
+        }
+
+        .option-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 12px;
+            color: #f8fafc;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .option-card:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Final Result Section Button */
+        .result-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .result-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+            color: white;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .result-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.6);
+        }
+
+        /* Hint Footer */
+        footer {
+            background: rgba(244, 114, 182, 0.1);
+            border: 1px solid rgba(244, 114, 182, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #f472b6;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 600px) {
+            .options-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="./Index.html">🏠Home</a>
-        |
-        <a href="./level1.html">🧩 Puzzle 1</a>
-        |
-        <a href="./level2.html">🧩 Puzzle 2</a>
-        |
-        <a href="./level3.html">🧩 Puzzle 3</a>
-        |
-        <a href="./level4.html">🧩 Puzzle 4</a>
-        |
-        <a href="./level5.html">🧩 Puzzle 5</a>
-        |
-        <a href="./result.html">🏆 Result</a>
-        
-    </nav>
-    <h1>🧩 Level 5: Riddle Puzzle (The Silent Watcher)</h1>
-    <h3>🕵️‍♂️ Barn Riddle Challenge! 🏡✨</h3>  
-    <img src="./photo5.png" alt="Description of image">  
-    <p>
-        "Mera koi mooh nahi hai, par main saari duniya ko farm ke andar ki garmi aur thand ka haal batata hoon. Main barn ke sabse upar chhat par baitha rehta hoon aur hawa ka rukh dekhta hoon ki woh kis disha mein beh rahi hai." 🌬️🐔</p>
-    <br><h3>Sawal: Batao main kaun hoon? 🤔</h3><ol type="A">
-        <a href="./wrong5.html"><li>Tractor</li></a>
-        <a href="./result.html"><li>Weather Vane (Murga / Wind Indicator)✅</li></a>
-        <a href="./wrong5.html"><li>Scarecrow</li></a>
-        <a href="./wrong5.html"><li>Milk Can</li></a>
-    </ol>
-    <h2>✨✨Final Result:</h2>
-    <a href="./result.html"><button>View Result</button></a>
-    <footer>
-        <br>
-        Hint: 🧭 "Barn ke sabse upar chhat par dekho, wahan ek choti si cheez hoti hai jo hawa ke sath ghumti hai aur rukh batati hai!" 🐔
-    </footer>
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="./Index.html">🏠 Home</a>
+            <a href="./level1.html">🧩 Puzzle 1</a>
+            <a href="./level2.html">🧩 Puzzle 2</a>
+            <a href="./level3.html">🧩 Puzzle 3</a>
+            <a href="./level4.html">🧩 Puzzle 4</a>
+            <a href="./level5.html">🧩 Puzzle 5</a>
+            <a href="./result.html">🏆 Result</a>
+        </nav>
+
+        <!-- Header Info -->
+        <h1>🧩 Level 5: Riddle Puzzle</h1>
+        <h3>🕵️‍♂️ Barn Riddle Challenge! 🏡✨</h3>  
+
+        <!-- Puzzle Image -->
+        <img class="puzzle-img" src="../First_HTML_project/photo5.png" alt="Riddle Puzzle Illustration">  
+
+        <!-- Riddle Box -->
+        <div class="question-box">
+            "Mera koi mooh nahi hai, par main saari duniya ko farm ke andar ki garmi aur thand ka haal batata hoon. Main barn ke sabse upar chhat par baitha rehta hoon aur hawa ka rukh dekhta hoon ki woh kis disha mein beh rahi hai." 🌬️🐔
+        </div>
+
+        <div class="sub-question">
+            🤔 Sawal: Batao main kaun hoon?
+        </div>
+
+        <!-- Options Grid -->
+        <ul class="options-list">
+            <a href="./wrong5.html"><li class="option-card">Tractor</li></a>
+            <a href="./result.html"><li class="option-card" style="border-color: #38bdf8; background: rgba(56,189,248,0.1);">Weather Vane (Murga) ✅</li></a>
+            <a href="./wrong5.html"><li class="option-card">Scarecrow</li></a>
+            <a href="./wrong5.html"><li class="option-card">Milk Can</li></a>
+        </ul>
+
+        <!-- Direct Result Button -->
+        <div class="result-section">
+            <h3 style="margin-bottom: 15px; color: #f8fafc;">✨ Ready to see your performance?</h3>
+            <a href="./result.html" class="result-btn">🏆 View Final Result</a>
+        </div>
+
+        <!-- Hint Footer -->
+        <footer>
+            💡 <strong>Hint:</strong> Barn ke sabse upar chhat par dekho, wahan ek choti si cheez hoti hai jo hawa ke sath ghumti hai aur rukh batati hai! 🐔
+        </footer>
+    </div>
+
 </body>
 </html>

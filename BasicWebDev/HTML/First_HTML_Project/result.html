@@ -3,101 +3,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ultimate Victory & Certificate | Brain Challenge</title>
+    <!-- Google Fonts for World-Class Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset & Futuristic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
+        }
+
+        /* Main Glassmorphism Container */
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 850px;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav a:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Headers */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            animation: glowText 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowText {
+            0% { filter: drop-shadow(0 0 2px rgba(56,189,248,0.3)); }
+            100% { filter: drop-shadow(0 0 10px rgba(192,132,252,0.6)); }
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #34d399;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Interactive Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .stat-card h4 {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #38bdf8;
+        }
+
+        /* Modern Scorecard Table */
+        .score-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .score-table th, .score-table td {
+            padding: 12px 18px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .score-table thead tr {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        .score-table tbody tr {
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.3s ease;
+        }
+
+        .score-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .score-table tfoot tr {
+            background: rgba(192, 132, 252, 0.15);
+            color: #c084fc;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        /* Audio Player Styling */
+        .audio-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 14px;
+            margin: 20px 0;
+            display: inline-block;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 300px;
+            accent-color: #38bdf8;
+        }
+
+        /* Form & Fieldset Styling */
+        fieldset {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        legend {
+            color: #38bdf8;
+            font-weight: 600;
+            padding: 0 10px;
+            font-size: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        }
+
+        select option {
+            background: #0f172a;
+            color: white;
+        }
+
+        /* Action Buttons */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.6);
+        }
+
+        .secondary-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Certificate Modal / Hidden Preview Box */
+        #certModal {
+            display: none;
+            margin-top: 25px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(192, 132, 252, 0.1) 100%);
+            border: 2px dashed #38bdf8;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="./Index.html">🏠Home</a>
-        |
-        <a href="./level1.html">🧩 Puzzle 1</a>
-        |
-        <a href="./level2.html">🧩 Puzzle 2</a>
-        |
-        <a href="./level3.html">🧩 Puzzle 3</a>
-        |
-        <a href="./level4.html">🧩 Puzzle 4</a>
-        |
-        <a href="./level5.html">🧩 Puzzle 5</a>
-        |
-        <a href="./result.html">🏆 Result</a>
-        
-    </nav>
-    <h1>🏆 Final Result: 🏆</h1>
-    <h2>✨✨Congratulations! You completed all 5 puzzles!</h2>
-    
-        <table cellpadding="10" cellspacing="0" style="background-color: bisque;">
-            <tr>
-                <th colspan="10">All Levels</th>
-                <th colspan="10">Result Score</th>
-            </tr>
-             <tr>
-                <th colspan="10">Level 1</th>
-                <th colspan="10">100</th>
-            </tr>
-             <tr>
-                <th colspan="10">Level 2</th>
-                <th colspan="10">100</th>
-            </tr>
-             <tr>
-                <th colspan="10">Level 3</th>
-                <th colspan="10">100</th>
-            </tr>
-             <tr>
-                <th colspan="10">Level 4</th>
-                <th colspan="10">100</th>
-            </tr>
-             <tr>
-                <th colspan="10">Level 5</th>
-                <th colspan="10">100</th>
-            </tr>
-            <tr>
-                <th colspan="10">Final Score</th>
-                <th colspan="10">100</th>
-            </tr>
-    
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="./Index.html">🏠 Home</a>
+            <a href="./level1.html">🧩 Puzzle 1</a>
+            <a href="./level2.html">🧩 Puzzle 2</a>
+            <a href="./level3.html">🧩 Puzzle 3</a>
+            <a href="./level4.html">🧩 Puzzle 4</a>
+            <a href="./level5.html">🧩 Puzzle 5</a>
+            <a href="./result.html">🏆 Result</a>
+        </nav>
+
+        <!-- Header -->
+        <h1>🏆 Ultimate Victory Result 🏆</h1>
+        <h2>✨✨ Congratulations! You successfully mastered all 5 brain puzzles!</h2>
+
+        <!-- Quick Stats Cards (Extra Interactive Element) -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h4>🎯 Total Puzzles</h4>
+                <div class="value">5 / 5 Cleared</div>
+            </div>
+            <div class="stat-card">
+                <h4>⭐ Accuracy Rate</h4>
+                <div class="value">100% Precision</div>
+            </div>
+            <div class="stat-card">
+                <h4>👑 Rank Achieved</h4>
+                <div class="value">Grand Master</div>
+            </div>
+        </div>
+
+        <!-- Scorecard Table -->
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>🎯 Level Completed</th>
+                    <th>📊 Performance Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Level 1: Logic Puzzle (Barn & Animals)</td>
+                    <td>100 / 100 🌟</td>
+                </tr>
+                <tr>
+                    <td>Level 2: Math Puzzle (Hay Bales)</td>
+                    <td>100 / 100 🌟</td>
+                </tr>
+                <tr>
+                    <td>Level 3: Word Puzzle (Farm Anagram)</td>
+                    <td>100 / 100 🌟</td>
+                </tr>
+                <tr>
+                    <td>Level 4: Pattern Puzzle (Fence Sequence)</td>
+                    <td>100 / 100 🌟</td>
+                </tr>
+                <tr>
+                    <td>Level 5: Riddle Puzzle (Silent Watcher)</td>
+                    <td>100 / 100 🌟</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>👑 Overall Grand Total</td>
+                    <td>500 / 500 (Master Elite)</td>
+                </tr>
+            </tfoot>
         </table>
-        <h3><u>🎶 Listen to the Farm Melody & Celebration</u></h3>
-        <audio controls>
-            <source src="farm_vibes.mp3" type="audio/mpeg">
-        </audio>
-    <h3><u>🏆 Claim Your Certificate & Share Your Experience!</u></h3>
 
+        <!-- Celebration Music Section -->
+        <h3>🎶 Listen to the Farm Melody & Celebration</h3>
+        <div class="audio-box">
+            <audio controls>
+                <source src="../First_HTML_project/farm_vibes.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Certificate Form Section -->
+        <h3>🏆 Claim Your Digital Certificate & Feedback</h3>
         <p>"Humein umeed hai ki aapko yeh barn challenge khelne mein maza aaya hoga! Neeche apna naam aur feedback dekar apna digital certificate prapt karein."</p>
-        <h4>Form Content & Fields:</h4>
-       <fieldset>
-        <form>
-    
-            
-        <label for="username">👤 Aapka Poora Naam (Your Full Name):</label>
-            <input type="text" id="username" name="username">
-            <br>
-            <br>
-            <label for="email">📧 Aapka Email (Email Address):</label>
-            <input type="email" id="email" name="email">
-            <br>
-            <br>
 
-      ⭐ Aapko challenge kaisa laga?
-            <select>
-                            <option value="1">⭐</option>
-                            <option value="2">⭐⭐</option>
-                            <option value="3">⭐⭐⭐</option>
-                            <option value="3">⭐⭐⭐⭐</option>
-                            <option value="3">⭐⭐⭐⭐⭐</option>
-                        </select>
-                        <br>
-                        <br>💬 Aapka Pyara sa Feedback (Your Comments):
-                     <textarea rows="4" cols="4"></textarea>
-                     <br>
-                     <br>
-                     <button value="Submit">Submit</button>
-                        
-        </form>
+        <fieldset>
+            <legend>✨ Certificate & User Details Form</legend>
+            <form id="certForm" onsubmit="generateCertificate(event)">
+                
+                <label for="username">👤 Aapka Poora Naam (Your Full Name):</label>
+                <input type="text" id="username" name="username" placeholder="Enter your full name here..." required>
 
-       </fieldset>
-       <footer>
-        <h3>🌾 Thank you for playing the Barn Challenge! Phir milenge ek naye adventure ke sath! 🐄✨</h3>
-       </footer>
+                <label for="email">📧 Aapka Email (Email Address):</label>
+                <input type="email" id="email" name="email" placeholder="name@example.com" required>
+
+                <label for="rating">⭐ Aapko challenge kaisa laga? (Rate Experience):</label>
+                <select id="rating" name="rating">
+                    <option value="5">⭐⭐⭐⭐⭐ (Outstanding / Amazing Experience)</option>
+                    <option value="4">⭐⭐⭐⭐ (Very Good)</option>
+                    <option value="3">⭐⭐⭐ (Good)</option>
+                    <option value="2">⭐⭐ (Average)</option>
+                    <option value="1">⭐ (Needs Improvement)</option>
+                </select>
+
+                <label for="comments">💬 Aapka Pyara sa Feedback (Your Comments):</label>
+                <textarea id="comments" name="comments" rows="3" placeholder="Share your experience about the puzzles..."></textarea>
+
+                <div class="btn-group">
+                    <button type="submit" class="action-btn">🚀 Generate Certificate</button>
+                    <a href="./Index.html" class="action-btn secondary-btn">🏠 Play Again</a>
+                </div>
+            </form>
+        </fieldset>
+
+        <!-- Interactive Certificate Preview Box (Appears on Submit) -->
+        <div id="certModal">
+            <h2 style="color: #38bdf8; margin-bottom: 10px;">📜 CERTIFICATE OF ACHIEVEMENT 📜</h2>
+            <p>This is proudly presented to</p>
+            <h1 id="displayName" style="font-size: 2rem; color: #f472b6; margin: 10px 0;">[User Name]</h1>
+            <p>For successfully solving all 5 futuristic puzzles in the <strong>Brain Challenge</strong> with a score of <strong>500/500</strong>!</p>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #94a3b8;">✨ Farm Barn Adventure Master Badge Awarded 🚜🌾</p>
+            <button onclick="window.print()" class="action-btn" style="margin-top: 15px; max-width: 200px; margin-left: auto; margin-right: auto;">🖨️ Print / Save PDF</button>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            🌾 Thank you for playing the Brain Challenge! Phir milenge ek naye adventure ke sath! 🐄✨
+        </footer>
+    </div>
+
+    <!-- JavaScript to handle Interactive Certificate Generation -->
+    <script>
+        function generateCertificate(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('username').value;
+            if(nameInput.trim() !== "") {
+                document.getElementById('displayName').innerText = nameInput;
+                const modal = document.getElementById('certModal');
+                modal.style.display = 'block';
+                modal.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
 
 </body>
 </html>
