@@ -1,0 +1,983 @@
+/* =========================================================
+   FURNI SHOP
+   Pure HTML + CSS
+========================================================= */
+
+
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    color: #6a6a6a;
+    font-size: 14px;
+    background: #eff2f1;
+
+    /* Page ko horizontal scroll nahi karne dena */
+    overflow-x: hidden;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.custom-navbar {
+    width: 100%;
+    background: #3b5d50;
+    padding: 20px 0;
+}
+
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* Logo */
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+.navbar-brand span {
+    opacity: 0.4;
+}
+
+
+/* Navigation */
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    list-style: none;
+
+    margin-left: auto;
+}
+
+
+.navbar-nav li {
+    position: relative;
+}
+
+
+.navbar-nav li a {
+    display: block;
+
+    color: #ffffff;
+
+    font-weight: 500;
+
+    padding: 8px 12px;
+
+    opacity: 0.5;
+
+    transition: 0.3s ease;
+}
+
+
+.navbar-nav li a:hover {
+    opacity: 1;
+}
+
+
+/* Active underline */
+
+.navbar-nav li.active a {
+    opacity: 1;
+}
+
+
+.navbar-nav li.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+
+    bottom: 0;
+
+    height: 4px;
+
+    background: #f9bf29;
+
+    border-radius: 5px;
+}
+
+
+/* User + Cart */
+
+.navbar-cta {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.navbar-cta a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.navbar-cta img {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    background: #3b5d50;
+
+    padding: 80px 0;
+}
+
+
+.hero-content {
+    display: flex;
+    align-items: center;
+}
+
+
+.hero-text {
+    max-width: 500px;
+}
+
+
+.hero h1 {
+    color: #ffffff;
+
+    font-size: 54px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+
+.hero p {
+    color: rgba(255, 255, 255, 0.65);
+
+    max-width: 500px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PRODUCT SECTION
+========================================================= */
+
+.product-section {
+    padding: 100px 0;
+}
+
+
+/* Product Grid */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 70px 30px;
+}
+
+
+/* Product */
+
+.product-item {
+    position: relative;
+
+    display: block;
+
+    text-align: center;
+
+    padding: 25px 15px 45px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    z-index: 1;
+}
+
+
+/* Background hover effect */
+
+.product-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 0;
+
+    background: #dce5e4;
+
+    border-radius: 12px;
+
+    z-index: -1;
+
+    transition: 0.3s ease;
+}
+
+
+.product-item:hover::before {
+    height: 75%;
+}
+
+
+/* Product image */
+
+.product-image {
+    position: relative;
+
+    margin-bottom: 25px;
+
+    min-height: 210px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.product-image img {
+    width: 100%;
+
+    max-width: 210px;
+
+    margin: auto;
+
+    transition: 0.3s ease;
+
+    position: relative;
+}
+
+
+.product-item:hover .product-image img {
+    transform: translateY(-20px);
+}
+
+
+/* Product title */
+
+.product-item h3 {
+    color: #2f2f2f;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+
+/* Price */
+
+.product-item strong {
+    color: #2f2f2f;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+
+/* Cross button */
+
+.icon-cross {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    transform:
+        translateX(-50%)
+        scale(0.7);
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #2f2f2f;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s ease;
+}
+
+
+.icon-cross img {
+    width: 16px;
+    height: 16px;
+}
+
+
+.product-item:hover .icon-cross {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        scale(1);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer-section {
+    position: relative;
+
+    background: #ffffff;
+
+    padding: 90px 0 30px;
+}
+
+
+.footer-container {
+    position: relative;
+}
+
+
+/* =========================================================
+   SOFA IMAGE
+========================================================= */
+
+.sofa-img {
+    position: absolute;
+
+    top: -170px;
+
+    right: 0;
+
+    z-index: 1;
+}
+
+
+.sofa-img img {
+    width: 300px;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.subscription-section {
+    position: relative;
+
+    z-index: 2;
+
+    width: 70%;
+
+    margin-bottom: 80px;
+}
+
+
+.subscription-section h3 {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #3b5d50;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+
+.subscription-section h3 img {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* Form */
+
+.subscription-form {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.subscription-form input {
+    width: 230px;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 1px solid #d6d6d6;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: #ffffff;
+}
+
+
+.subscription-form input:focus {
+    border-color: #3b5d50;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.subscription-form button {
+    width: 55px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #3b5d50;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.subscription-form button:hover {
+    background: #2f4c41;
+}
+
+
+/* =========================================================
+   FOOTER MAIN
+========================================================= */
+
+.footer-main {
+    display: grid;
+
+    grid-template-columns:
+        1fr 2fr;
+
+    gap: 70px;
+
+    padding-bottom: 50px;
+}
+
+
+/* =========================================================
+   FOOTER ABOUT
+========================================================= */
+
+.footer-about {
+    max-width: 370px;
+}
+
+
+.footer-logo {
+    display: inline-block;
+
+    color: #3b5d50;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+
+.footer-logo span {
+    opacity: 0.5;
+}
+
+
+.footer-about p {
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.custom-social {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.custom-social a {
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dce5e4;
+
+    color: #3b5d50;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+
+.custom-social a:hover {
+    background: #3b5d50;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.footer-links {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.footer-column h4 {
+    color: #2f2f2f;
+
+    font-size: 15px;
+
+    margin-bottom: 8px;
+}
+
+
+.footer-column a {
+    color: #6a6a6a;
+
+    transition: 0.3s ease;
+}
+
+
+.footer-column a:hover {
+    color: #3b5d50;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.copyright {
+    border-top: 1px solid #dce5e4;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.copyright p {
+    margin: 0;
+}
+
+
+.copyright a {
+    color: #2f2f2f;
+
+    font-weight: 500;
+}
+
+
+.copyright-links {
+    display: flex;
+
+    gap: 30px;
+
+    white-space: nowrap;
+}
+
+
+.copyright-links a:hover {
+    color: #3b5d50;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar-nav {
+        gap: 0;
+    }
+
+
+    .navbar-nav li a {
+        padding: 8px 7px;
+
+        font-size: 13px;
+    }
+
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 60px 25px;
+    }
+
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-links {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+
+    .sofa-img {
+        top: -120px;
+    }
+
+
+    .sofa-img img {
+        width: 230px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 92%;
+    }
+
+
+    /* Navbar */
+
+    .navbar-container {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .navbar-brand {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .navbar-nav {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 5px;
+    }
+
+
+    .navbar-nav li {
+        flex-shrink: 0;
+    }
+
+
+    .navbar-cta {
+        position: absolute;
+
+        right: 20px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 60px 0;
+    }
+
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+
+    /* Products */
+
+    .product-section {
+        padding: 70px 0;
+    }
+
+
+    .product-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .product-item {
+        max-width: 320px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+
+    /* Footer */
+
+    .footer-section {
+        padding-top: 70px;
+    }
+
+
+    .sofa-img {
+        position: relative;
+
+        top: auto;
+
+        right: auto;
+
+        display: flex;
+
+        justify-content: center;
+
+        margin-bottom: 30px;
+    }
+
+
+    .subscription-section {
+        width: 100%;
+
+        margin-bottom: 60px;
+    }
+
+
+    .subscription-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .subscription-form input {
+        width: 100%;
+    }
+
+
+    .subscription-form button {
+        width: 100%;
+    }
+
+
+    .footer-links {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 35px 20px;
+    }
+
+
+    .copyright {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .copyright-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .navbar-cta {
+        position: static;
+
+        margin-left: auto;
+    }
+
+
+    .navbar-brand {
+        width: auto;
+    }
+
+
+    .navbar-container {
+        justify-content: space-between;
+    }
+
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+}
