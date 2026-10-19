@@ -3,10 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>hello</title>
 </head>
 <body>
     <h1 align="center"><u>Task 7:</u></h1>
     <h1>Using CSS</h1>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login & Registration</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+
+        body {
+            background-color: #4169e8;
+            min-height: 100vh;
+        }
+
+        .auth-container {
+            min-height: 100vh;
+        }
+
+        .auth-card {
+            background: white;
+            border-radius: 6px;
+            padding: 25px;
+            width: 100%;
+            max-width: 315px;
+        }
+
+        .auth-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .auth-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 25px;
+            height: 3px;
+            background-color: #4169e8;
+        }
+
+        .input-group {
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 18px;
+        }
+
+        .input-group-text {
+            background: transparent;
+            border: none;
+            color: #999;
+            padding-left: 0;
+        }
+
+        .form-control {
+            border: none;
+            box-shadow: none !important;
+            font-size: 13px;
+            padding-left: 8px;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        .input-group:focus-within {
+            border-bottom-color: #4169e8;
+        }
+
+        .show-password {
+            color: #999;
+            background: transparent;
+            border: none;
+        }
+
+        .form-check-label {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .forgot-password {
+            font-size: 12px;
+            color: #4169e8;
+            text-decoration: none;
+        }
+
+        .auth-btn {
+            background-color: #4169e8;
+            border: none;
+            width: 100%;
+            height: 40px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .auth-btn:hover {
+            background-color: #3158d5;
+        }
+
+        .bottom-text {
+            text-align: center;
+            font-size: 11px;
+            color: #777;
+            margin-top: 18px;
+            margin-bottom: 5px;
+        }
+
+        .bottom-text a {
+            color: #4169e8;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container auth-container d-flex align-items-center justify-content-center">
+
+    <div class="row g-5 justify-content-center align-items-center">
+
+        <!-- LOGIN -->
+        <div class="col-12 col-md-6 col-lg-auto">
+
+            <div class="auth-card mx-auto">
+
+                <h2 class="auth-title">Login</h2>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-envelope"></i>
+                    </span>
+
+                    <input 
+                        type="email"
+                        class="form-control"
+                        placeholder="Enter your email">
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <span class="input-group-text">
+                        <i class="bi bi-lock"></i>
+                    </span>
+
+                    <input 
+                        type="password"
+                        class="form-control"
+                        placeholder="Confirm a password">
+
+                    <button class="show-password">
+                        <i class="bi bi-eye"></i>
+                    </button>
+
+                </div>
+
+                <!-- Remember + Forgot -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <div class="form-check">
+                        <input 
+                            class="form-check-input"
+                            type="checkbox"
+                            id="remember">
+
+                        <label 
+                            class="form-check-label"
+                            for="remember">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <a href="#" class="forgot-password">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+                <!-- Button -->
+                <button class="btn btn-primary auth-btn">
+                    Login Now
+                </button>
+
+                <p class="bottom-text">
+                    Don't have an account?
+                    <a href="#">Signup now</a>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- REGISTRATION -->
+        <div class="col-12 col-md-6 col-lg-auto">
+
+            <div class="auth-card mx-auto">
+
+                <h2 class="auth-title">Registration</h2>
+
+                <!-- Name -->
+                <div class="input-group">
+
+                    <span class="input-group-text">
+                        <i class="bi bi-person"></i>
+                    </span>
+
+                    <input 
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter your name">
+
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+
+                    <span class="input-group-text">
+                        <i class="bi bi-envelope"></i>
+                    </span>
+
+                    <input 
+                        type="email"
+                        class="form-control"
+                        placeholder="Enter your email">
+
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <span class="input-group-text">
+                        <i class="bi bi-lock"></i>
+                    </span>
+
+                    <input 
+                        type="password"
+                        class="form-control"
+                        placeholder="Create a password">
+
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+
+                    <span class="input-group-text">
+                        <i class="bi bi-lock"></i>
+                    </span>
+
+                    <input 
+                        type="password"
+                        class="form-control"
+                        placeholder="Confirm a password">
+
+                    <button class="show-password">
+                        <i class="bi bi-eye"></i>
+                    </button>
+
+                </div>
+
+                <!-- Terms -->
+                <div class="form-check mb-4">
+
+                    <input 
+                        class="form-check-input"
+                        type="checkbox"
+                        id="terms">
+
+                    <label 
+                        class="form-check-label"
+                        for="terms">
+                        I accept all terms & conditions
+                    </label>
+
+                </div>
+
+                <!-- Button -->
+                <button class="btn btn-primary auth-btn">
+                    Register Now
+                </button>
+
+                <p class="bottom-text">
+                    Already have an account?
+                    <a href="#">Login now</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<i class="bi bi-0-circle"></i>
+
+</body>
+</html>
 </body>
 </html>
